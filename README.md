@@ -1,70 +1,108 @@
-# Getting Started with Create React App
+# E—Comma Frontend 🛍️
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A premium thrift store built with React.js — featuring a dark, minimal aesthetic inspired by luxury fashion brands.
 
-## Available Scripts
+## 🌐 Live Demo
+👉 [https://ecomma.vercel.app](https://ecomma.vercel.app)
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## ✨ Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- 🎨 Premium dark aesthetic design
+- 👗 Men's & Women's sections with category tabs
+- 🔍 Live search bar
+- 🔐 Login & Register with OTP verification
+- 📦 Product detail page with image gallery
+- 🛒 Cart with quantity controls
+- 📋 Order history page
+- 👑 Full admin panel
+- 📱 Responsive design
+- 🖼️ Multiple product images via Cloudinary
+- 📧 Beautiful branded email notifications
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🛠️ Tech Stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+| Technology | Purpose |
+|------------|---------|
+| React.js | Frontend framework |
+| React Router | Page navigation |
+| Axios | API calls |
+| CSS-in-JS | Styling |
+| Playfair Display | Typography |
+| Jost | Body font |
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 📁 Project Structure
+```
+frontend/src/
+├── pages/
+│   ├── Home.jsx        # Homepage with hero & products
+│   ├── Login.jsx       # Login & Register page
+│   ├── ProductDetail.jsx # Product detail with gallery
+│   ├── Cart.jsx        # Shopping cart & checkout
+│   ├── Orders.jsx      # Order history
+│   └── Admin.jsx       # Admin panel
+├── App.js              # Routes
+└── index.js
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🚀 Getting Started
 
-### `npm run eject`
+### Installation
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Clone the repository
+\```bash
+git clone https://github.com/YOURUSERNAME/ecomma-frontend.git
+cd ecomma-frontend
+\```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. Install dependencies
+\```bash
+npm install
+\```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. Create `.env` file
+\```env
+REACT_APP_API_URL=http://localhost:5000
+\```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+4. Start the app
+\```bash
+npm start
+\```
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 📸 Pages
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+| Page | Description |
+|------|-------------|
+| Home | Hero, Men's & Women's sections, Search |
+| Product Detail | Images gallery, Add to cart |
+| Login/Register | OTP email verification |
+| Cart | Items, quantities, checkout |
+| Orders | Order history with status |
+| Admin | Products, Orders, Customers management |
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🔗 Backend Repository
+👉 [E—Comma Backend](https://github.com/shahalabdulla/ecomma-backend)
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 👨‍💻 Author
 
-### Making a Progressive Web App
+**Shahal Abdulla**
+- GitHub: [@shahalabdulla](https://github.com/shahalabdulla)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 📄 License
+MIT License
