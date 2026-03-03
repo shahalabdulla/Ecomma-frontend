@@ -164,8 +164,8 @@ export default function Admin() {
   const fetchAll = async () => {
     try {
       const [pRes, oRes] = await Promise.all([
-        axios.get('http://localhost:5000/api/products'),
-        axios.get('http://localhost:5000/api/orders', { headers: { Authorization: `Bearer ${token}` } })
+        axios.get('https://ecomma-backend.onrender.com/api/products'),
+        axios.get('https://ecomma-backend.onrender.com/api/orders', { headers: { Authorization: `Bearer ${token}` } })
       ])
       setProducts(pRes.data.products)
       setOrders(oRes.data.orders)
@@ -197,7 +197,7 @@ export default function Admin() {
         formData.append('images', file)
       })
 
-      await axios.post('http://localhost:5000/api/products', formData, {
+      await axios.post('https://ecomma-backend.onrender.com/api/products', formData, {
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'multipart/form-data'
@@ -216,7 +216,7 @@ export default function Admin() {
   const handleDeleteProduct = async (id) => {
     if (!window.confirm('Delete this product?')) return
     try {
-      await axios.delete(`http://localhost:5000/api/products/${id}`, { headers: { Authorization: `Bearer ${token}` } })
+      await axios.delete(`https://ecomma-backend.onrender.com/api/products/${id}`, { headers: { Authorization: `Bearer ${token}` } })
       showToast('Product deleted!')
       fetchAll()
     } catch { showToast('Could not delete!') }
@@ -224,7 +224,7 @@ export default function Admin() {
 
   const handleUpdateStatus = async (orderId, status) => {
     try {
-      await axios.put(`http://localhost:5000/api/orders/${orderId}/status`,
+      await axios.put(`https://ecomma-backend.onrender.com/api/orders/${orderId}/status`,
         { orderStatus: status },
         { headers: { Authorization: `Bearer ${token}` } }
       )

@@ -106,7 +106,7 @@ export default function Orders() {
 
   useEffect(() => {
     if (!token) { window.location.href = '/login'; return }
-    axios.get('http://localhost:5000/api/orders/myorders', {
+    axios.get('https://ecomma-backend.onrender.com/api/orders/myorders', {
       headers: { Authorization: `Bearer ${token}` }
     }).then(res => { setOrders(res.data.orders); setLoading(false) })
       .catch(() => setLoading(false))

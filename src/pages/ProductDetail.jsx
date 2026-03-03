@@ -98,7 +98,7 @@ export default function ProductDetail() {
   const token = localStorage.getItem('token')
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/products/${id}`)
+    axios.get(`https://ecomma-backend.onrender.com/api/products/${id}`)
       .then(res => { setProduct(res.data.product); setLoading(false) })
       .catch(() => setLoading(false))
   }, [])
@@ -111,7 +111,7 @@ export default function ProductDetail() {
   const handleAddToCart = () => {
     if (!token) { window.location.href = '/login'; return }
     setAdding(true)
-    axios.post('http://localhost:5000/api/cart',
+    axios.post('https://ecomma-backend.onrender.com/api/cart',
       { productId: product._id, quantity },
       { headers: { Authorization: `Bearer ${token}` } }
     ).then(() => {

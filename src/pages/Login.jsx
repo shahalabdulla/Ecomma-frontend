@@ -102,7 +102,7 @@ export default function Auth() {
     if (!loginForm.email || !loginForm.password) { setLoginError('Please fill in all fields!'); return }
     setLoginLoading(true)
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/login', loginForm)
+      const res = await axios.post('https://ecomma-backend.onrender.com/api/auth/login', loginForm)
       localStorage.setItem('token', res.data.token)
       localStorage.setItem('user', JSON.stringify(res.data.user))
       window.location.href = '/'
@@ -119,7 +119,7 @@ export default function Auth() {
     }
     setRegisterLoading(true)
     try {
-      await axios.post('http://localhost:5000/api/auth/register', registerForm)
+      await axios.post('https://ecomma-backend.onrender.com/api/auth/register', registerForm)
       setRegisterSuccess(`OTP sent to ${registerForm.email}!`)
       setStep('verify')
     } catch (err) {
@@ -148,7 +148,7 @@ export default function Auth() {
     if (otpString.length !== 6) { setRegisterError('Please enter complete OTP!'); return }
     setRegisterLoading(true)
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/verify-otp', {
+      const res = await axios.post('https://ecomma-backend.onrender.com/api/auth/verify-otp', {
         email: registerForm.email, otp: otpString
       })
       localStorage.setItem('token', res.data.token)
@@ -163,7 +163,7 @@ export default function Auth() {
 
   const handleResend = async () => {
     try {
-      await axios.post('http://localhost:5000/api/auth/resend-otp', { email: registerForm.email })
+      await axios.post('https://ecomma-backend.onrender.com/api/auth/resend-otp', { email: registerForm.email })
       setRegisterSuccess('New OTP sent!')
     } catch (err) {
       setRegisterError('Could not resend OTP!')

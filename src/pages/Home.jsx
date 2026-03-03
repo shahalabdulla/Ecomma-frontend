@@ -198,7 +198,7 @@ export default function Home() {
   }
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/products')
+    axios.get('https://ecomma-backend.onrender.com/api/products')
       .then(res => { setProducts(res.data.products); setLoading(false) })
       .catch(() => setLoading(false))
     const handleScroll = () => setScrolled(window.scrollY > 80)
@@ -214,7 +214,7 @@ export default function Home() {
   const handleAddToCart = (product) => {
     const token = localStorage.getItem('token')
     if (!token) { showToast('Please login to add items'); return }
-    axios.post('http://localhost:5000/api/cart',
+    axios.post('https://ecomma-backend.onrender.com/api/cart',
       { productId: product._id, quantity: 1 },
       { headers: { Authorization: `Bearer ${token}` } }
     ).then(() => showToast(`${product.name} added!`)).catch(() => showToast('Please login first'))

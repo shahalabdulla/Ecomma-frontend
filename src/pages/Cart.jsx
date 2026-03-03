@@ -129,7 +129,7 @@ export default function Cart() {
   }, [])
 
   const fetchCart = () => {
-    axios.get('http://localhost:5000/api/cart', {
+    axios.get('https://ecomma-backend.onrender.com/api/cart', {
       headers: { Authorization: `Bearer ${token}` }
     }).then(res => { setCart(res.data.cart); setLoading(false) })
       .catch(() => { setLoading(false) })
@@ -142,14 +142,14 @@ export default function Cart() {
 
   const updateQty = (productId, quantity) => {
     if (quantity < 1) { removeItem(productId); return }
-    axios.put(`http://localhost:5000/api/cart/${productId}`,
+    axios.put(`https://ecomma-backend.onrender.com/api/cart/${productId}`,
       { quantity },
       { headers: { Authorization: `Bearer ${token}` } }
     ).then(() => fetchCart()).catch(() => showToast('Could not update quantity'))
   }
 
   const removeItem = (productId) => {
-    axios.delete(`http://localhost:5000/api/cart/${productId}`,
+    axios.delete(`https://ecomma-backend.onrender.com/api/cart/${productId}`,
       { headers: { Authorization: `Bearer ${token}` } }
     ).then(() => { fetchCart(); showToast('Item removed') })
       .catch(() => showToast('Could not remove item'))
@@ -160,7 +160,7 @@ export default function Cart() {
       showToast('Please fill in shipping address!'); return
     }
     setOrdering(true)
-    axios.post('http://localhost:5000/api/orders',
+    axios.post('https://ecomma-backend.onrender.com/api/orders',
       { shippingAddress: address },
       { headers: { Authorization: `Bearer ${token}` } }
     ).then(() => {
