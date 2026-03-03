@@ -3,7 +3,7 @@
 A premium thrift store built with React.js — featuring a dark, minimal aesthetic inspired by luxury fashion brands.
 
 ## 🌐 Live Demo
-👉 [https://ecomma.vercel.app](https://ecomma.vercel.app)
+👉 [ecomma-frontend.vercel.app](https://ecomma-frontend.vercel.app/)
 
 ---
 
