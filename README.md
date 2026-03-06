@@ -1,108 +1,126 @@
-# E—Comma Frontend 🛍️
+# E—Comma Frontend
 
-A premium thrift store built with React.js — featuring a dark, minimal aesthetic inspired by luxury fashion brands.
+![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
+![Axios](https://img.shields.io/badge/Axios-5A29E4?style=flat&logo=axios&logoColor=white)
+![Vercel](https://img.shields.io/badge/Deployed%20on%20Vercel-000000?style=flat&logo=vercel&logoColor=white)
 
-## 🌐 Live Demo
-👉 [ecomma-frontend.vercel.app](https://ecomma-frontend.vercel.app/)
+A premium clothing (thrift) store frontend built with React.js. Features a dark minimal aesthetic, category-based product browsing, OTP authentication, shopping cart, order management, and a full admin panel.
 
----
-
-## ✨ Features
-
-- 🎨 Premium dark aesthetic design
-- 👗 Men's & Women's sections with category tabs
-- 🔍 Live search bar
-- 🔐 Login & Register with OTP verification
-- 📦 Product detail page with image gallery
-- 🛒 Cart with quantity controls
-- 📋 Order history page
-- 👑 Full admin panel
-- 📱 Responsive design
-- 🖼️ Multiple product images via Cloudinary
-- 📧 Beautiful branded email notifications
+**Live Demo:** https://ecomma-frontend.vercel.app
 
 ---
 
-## 🛠️ Tech Stack
+## Features
+
+- Dark premium UI with Playfair Display and Jost typography
+- Men's and Women's sections with category tabs
+- Live search across all products
+- OTP-based email verification on registration
+- Product detail page with multi-image gallery
+- Shopping cart with quantity controls
+- Order history with expandable order details
+- Full admin panel — products, orders, customers
+- Smart navbar — shows logout when authenticated
+- Responsive layout
+
+---
+
+## Tech Stack
 
 | Technology | Purpose |
 |------------|---------|
 | React.js | Frontend framework |
-| React Router | Page navigation |
-| Axios | API calls |
-| CSS-in-JS | Styling |
-| Playfair Display | Typography |
-| Jost | Body font |
+| React Router v6 | Client-side routing |
+| Axios | HTTP requests |
+| CSS-in-JS | Component styling |
+| Google Fonts | Typography |
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 ```
-frontend/src/
+src/
 ├── pages/
-│   ├── Home.jsx        # Homepage with hero & products
-│   ├── Login.jsx       # Login & Register page
-│   ├── ProductDetail.jsx # Product detail with gallery
-│   ├── Cart.jsx        # Shopping cart & checkout
-│   ├── Orders.jsx      # Order history
-│   └── Admin.jsx       # Admin panel
-├── App.js              # Routes
-└── index.js
+│   ├── Home.jsx
+│   ├── Login.jsx
+│   ├── ProductDetail.jsx
+│   ├── Cart.jsx
+│   ├── Orders.jsx
+│   └── Admin.jsx
+└── App.js
 ```
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Installation
 
 1. Clone the repository
-\```bash
-git clone https://github.com/YOURUSERNAME/ecomma-frontend.git
+```bash
+git clone https://github.com/shahalabdulla/ecomma-frontend.git
 cd ecomma-frontend
-\```
+```
 
 2. Install dependencies
-\```bash
+```bash
 npm install
-\```
+```
 
-3. Create `.env` file
-\```env
-REACT_APP_API_URL=https://ecomma-backend.onrender.com
-\```
+3. Configure environment variables
+```env
+REACT_APP_API_URL=http://localhost:5000
+```
 
-4. Start the app
-\```bash
+4. Start the development server
+```bash
 npm start
-\```
+```
 
 ---
 
-## 📸 Pages
+## Pages
 
-| Page | Description |
-|------|-------------|
-| Home | Hero, Men's & Women's sections, Search |
-| Product Detail | Images gallery, Add to cart |
-| Login/Register | OTP email verification |
-| Cart | Items, quantities, checkout |
-| Orders | Order history with status |
-| Admin | Products, Orders, Customers management |
-
----
-
-## 🔗 Backend Repository
-👉 [E—Comma Backend](https://github.com/shahalabdulla/ecomma-backend)
+| Page | Route | Description |
+|------|-------|-------------|
+| Home | `/` | Hero, product sections, search |
+| Auth | `/login` | Login and register with OTP |
+| Product Detail | `/product/:id` | Image gallery, add to cart |
+| Cart | `/cart` | Cart items, checkout, address |
+| Orders | `/orders` | Order history with status |
+| Admin | `/admin` | Full admin dashboard |
 
 ---
 
-## 👨‍💻 Author
+## Admin Panel
+
+The admin panel is accessible at `/admin` and requires an account with `role: admin` in the database.
+
+Features:
+- Dashboard with total products, orders, revenue, and pending orders
+- Add products with multiple image upload via Cloudinary
+- Delete products
+- View all orders with customer details and shipping address
+- Update order status (pending, processing, shipped, delivered, cancelled)
+- View all customers
+
+---
+
+## Related
+
+- Backend Repository: [ecomma-backend](https://github.com/shahalabdulla/ecomma-backend)
+- Live API: https://ecomma-backend.onrender.com
+
+---
+
+## Author
 
 **Shahal Abdulla**
-- GitHub: [@shahalabdulla](https://github.com/shahalabdulla)
+GitHub: [@shahalabdulla](https://github.com/shahalabdulla)
 
 ---
 
-## 📄 License
-MIT License
+## License
+
+MIT
