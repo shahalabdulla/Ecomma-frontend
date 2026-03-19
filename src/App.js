@@ -6,12 +6,14 @@ import Cart from './pages/Cart'
 import Orders from './pages/Orders'
 import ProductDetail from './pages/ProductDetail'
 import Admin from './pages/Admin'
+import AllProducts from './pages/AllProducts'
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/products" element={<AllProducts />} />
         <Route path="/login" element={<Auth />} />
         <Route path="/register" element={<Auth />} />
         <Route path="/cart" element={<Cart />} />

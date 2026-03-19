@@ -127,7 +127,7 @@ const styles = `
   .product-card:hover .add-to-cart-overlay { transform: translateY(0); opacity: 1; }
   .add-to-cart-overlay:hover { background: #0a0a0a; color: #f5f0eb; }
   .product-tag { position: absolute; top: 14px; left: 14px; background: #0a0a0a; color: #f5f0eb; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; padding: 4px 10px; }
-  .product-info { padding: 18px 0 28px; }
+  .product-info { padding: 22px 22px 30px; }
   .product-category-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--gray); margin-bottom: 5px; }
   .product-name { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 400; margin-bottom: 8px; color: #0a0a0a; }
   .product-bottom { display: flex; justify-content: space-between; align-items: center; }
@@ -155,7 +155,7 @@ const styles = `
 `
 
 const marqueeItems = ['Free Shipping Above Rs.999','Handpicked Thrift Pieces','Sustainable Fashion','Premium Pre-Loved Clothing','New Arrivals Every Week','Free Returns']
-const CATEGORIES = ['T-Shirts','Shirts','Pants','Jackets']
+const CATEGORIES = ['All','T-Shirts','Shirts','Pants','Jackets']
 
 function ProductCard({ product, onAddToCart }) {
   return (
@@ -186,8 +186,8 @@ export default function Home() {
   const [loading, setLoading] = useState(true)
   const [scrolled, setScrolled] = useState(false)
   const [search, setSearch] = useState('')
-  const [menTab, setMenTab] = useState('T-Shirts')
-  const [womenTab, setWomenTab] = useState('T-Shirts')
+  const [menTab, setMenTab] = useState('All')
+  const [womenTab, setWomenTab] = useState('All')
   const [toast, setToast] = useState({ show: false, message: '' })
   const user = JSON.parse(localStorage.getItem('user') || 'null')
 
@@ -228,8 +228,12 @@ export default function Home() {
       )
     : []
 
-  const menProducts = products.filter(p => p.category === `men-${menTab.toLowerCase()}`)
-  const womenProducts = products.filter(p => p.category === `women-${womenTab.toLowerCase()}`)
+  const menProducts = products.filter(p =>
+    menTab === 'All' ? p.category?.startsWith('men-') : p.category === `men-${menTab.toLowerCase()}`
+  )
+  const womenProducts = products.filter(p =>
+    womenTab === 'All' ? p.category?.startsWith('women-') : p.category === `women-${womenTab.toLowerCase()}`
+  )
   const marqueeDouble = [...marqueeItems, ...marqueeItems]
 
   return (
@@ -293,7 +297,7 @@ export default function Home() {
               <div className="hero-eyebrow">Est. 2026 — Curated Thrift</div>
               <h1 className="hero-title">Wear the<br /><>Story</></h1>
               <p className="hero-subtitle">Curated thrift finds delivered to your door</p>
-              <button className="hero-cta" onClick={() => document.getElementById('men')?.scrollIntoView({ behavior:'smooth' })}>
+              <button className="hero-cta" onClick={() => window.location.href = '/products'}>
                 <span>View All Products</span>
               </button>
             </div>

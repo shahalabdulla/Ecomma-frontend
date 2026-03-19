@@ -37,7 +37,7 @@ const styles = {
     objectFit: 'cover'
   },
   info: {
-    padding: '15px'
+    padding: '20px 20px 22px'
   },
   name: {
     fontSize: '18px',
