@@ -5,7 +5,7 @@
 ![Axios](https://img.shields.io/badge/Axios-5A29E4?style=flat&logo=axios&logoColor=white)
 ![Vercel](https://img.shields.io/badge/Deployed%20on%20Vercel-000000?style=flat&logo=vercel&logoColor=white)
 
-A premium clothing (thrift) store frontend built with React.js. Features a dark minimal aesthetic, category-based product browsing, OTP authentication, shopping cart, order management, and a full admin panel.
+clothing store frontend built with React.js. Features a dark minimal, category-based product browsing, OTP authentication, shopping cart, order management, and a full admin panel.
 
 **Live Demo:** https://ecomma-frontend.vercel.app
 
